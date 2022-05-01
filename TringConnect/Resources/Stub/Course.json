@@ -1,0 +1,20 @@
+{
+  "course":[
+     {
+       "name": "Amazon Dynamo DB",
+       "image": "carosel_one"
+     },
+     {
+       "name": "Portfolio Management",
+       "image": "carousel_two"
+     },
+     {
+       "name": "Amazon Dynamo DB",
+       "image": "carosel_one"
+     },
+     {
+       "name": "Portfolio Management",
+       "image": "carousel_two"
+     }
+  ]
+}

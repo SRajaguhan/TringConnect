@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostWithButtonView" customModule="TringConnect" customModuleProvider="target">
+            <connections>
+                <outlet property="knowbutton" destination="kOT-k9-beo" id="LqW-fO-Qs2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="crR-zc-xbS">
+                    <rect key="frame" x="24" y="16" width="366" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="JwW-xG-mdW"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introducing Amazon EMR serverless " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDf-jJ-5bL">
+                    <rect key="frame" x="24" y="212" width="190" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="190" id="xXq-yY-Ldj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                    <color key="textColor" name="Gray_Title"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOT-k9-beo">
+                    <rect key="frame" x="271" y="217" width="119" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="119" id="4Tl-Kj-jsD"/>
+                        <constraint firstAttribute="height" constant="44" id="ahI-kn-WMt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Know more">
+                        <color key="titleColor" name="Gray_Title"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="NO"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="Green"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="aws.amazon.com | 2 mins read" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D5-5Q-KCl">
+                    <rect key="frame" x="24" y="268" width="156" height="14"/>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7D5-5Q-KCl" secondAttribute="bottom" constant="16" id="2ym-tz-w0R"/>
+                <constraint firstItem="kOT-k9-beo" firstAttribute="top" secondItem="crR-zc-xbS" secondAttribute="bottom" constant="21" id="BnV-wd-HhZ"/>
+                <constraint firstItem="UDf-jJ-5bL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="JbT-aL-rBv"/>
+                <constraint firstItem="7D5-5Q-KCl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="NlL-YR-eol"/>
+                <constraint firstItem="crR-zc-xbS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="OUy-Qw-XLW"/>
+                <constraint firstItem="crR-zc-xbS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="XXf-xW-Ts8"/>
+                <constraint firstItem="7D5-5Q-KCl" firstAttribute="top" secondItem="UDf-jJ-5bL" secondAttribute="bottom" constant="2" id="h6h-5Q-IAu"/>
+                <constraint firstItem="UDf-jJ-5bL" firstAttribute="top" secondItem="crR-zc-xbS" secondAttribute="bottom" constant="16" id="mH6-a4-gdV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="crR-zc-xbS" secondAttribute="trailing" constant="24" id="tUR-XJ-JXL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kOT-k9-beo" secondAttribute="trailing" constant="24" id="vhi-He-aNr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="83.035714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="banner" width="342" height="180"/>
+        <namedColor name="Gray_Title">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Green">
+            <color red="0.35699999332427979" green="0.7369999885559082" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,40 @@
+{
+  "event":[
+     {
+       "name": "",
+       "image": "add_circle_icon"
+     },
+     {
+       "name": "HR Team",
+       "image": "hr_icon"
+     },
+     {
+       "name": "Creative Bees",
+       "image": "ux_icon"
+     },
+     {
+       "name": "TechMads",
+       "image": "tech_icon"
+     },
+     {
+       "name": "Cloud 9",
+       "image": "cloud_icon"
+     },
+     {
+       "name": "HR Team",
+       "image": "hr_icon"
+     },
+     {
+       "name": "Creative Bees",
+       "image": "ux_icon"
+     },
+     {
+       "name": "TechMads",
+       "image": "tech_icon"
+     },
+     {
+       "name": "Cloud 9",
+       "image": "cloud_icon"
+     }
+  ]
+}
