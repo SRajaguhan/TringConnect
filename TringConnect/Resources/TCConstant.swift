@@ -25,5 +25,6 @@ struct TCConstant {
     static let kImageCollectionViewCell = "ImageCollectionViewCell"
     static let kPostWithCollageTableViewCell = "PostWithCollageTableViewCell"
     static let kPostWithCollageTableViewCellIdentifier = "PostWithCollageTableViewCellIdentifier"
+    static let kApiURL = "http://th-alb-1338985061.ap-south-1.elb.amazonaws.com/api/v1/feeds"
 }
 

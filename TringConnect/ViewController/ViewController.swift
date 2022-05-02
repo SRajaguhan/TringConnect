@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     
     func fetchData() {
         
-        let url = URL(string: "http://th-alb-1338985061.ap-south-1.elb.amazonaws.com/api/v1/feeds")
+        let url = URL(string: TCConstant.kApiURL)
         guard let requestUrl = url else { fatalError() }
         // Create URL Request
         var request = URLRequest(url: requestUrl)
@@ -77,8 +77,8 @@ class ViewController: UIViewController {
                 let decoder = JSONDecoder()
 
                 do {
-                let user = try decoder.decode(PersonDetails.self, from: data)
-                    print(user.name)
+                let _ = try decoder.decode(PersonDetails.self, from: data)
+
                 } catch {
                 print(error.localizedDescription)
                 }
@@ -125,9 +125,7 @@ extension ViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.navigationDelegate = self
-            //cell.setupDataSource(index: indexPath.row)
             return cell
-            break
         case .postwithImages:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TCConstant.kImagePostTableViewCellIdentifier, for: indexPath) as? ImagePostTableViewCell else {
                 return UITableViewCell()
