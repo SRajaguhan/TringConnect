@@ -20,5 +20,11 @@ class CustomImageHeaderView: UIView {
         super.awakeFromNib()
         commonInit(nibName)
     }
+    
+    func setupDataSource(_ person: PersonDetails) {
+        role.text = person.role
+        descriptionTxt.text = person.post
+        titleName.text = person.name
+    }
 
 }

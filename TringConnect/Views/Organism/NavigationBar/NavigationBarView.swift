@@ -31,8 +31,16 @@ class NavigationBarView: UIView {
         return badgeCount
     }
     
-    @IBAction func notificationsButtonTapAction(_ sender: Any) {
-        removeBadge()
+    @IBAction func notificationsButtonTapAction(_ sender: UIButton) {
+        
+        notificationsButton.isSelected = !notificationsButton.isSelected
+        
+        if sender.isSelected {
+            removeBadge()
+        } else {
+           
+            showBadge()
+        }
     }
     
     func showBadge() {

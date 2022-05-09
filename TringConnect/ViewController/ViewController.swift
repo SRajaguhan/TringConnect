@@ -21,17 +21,31 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var navigationView: NavigationBarView!
     @IBOutlet weak var tableView: UITableView!
-    
+    var personDetails: [PersonDetails] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        initialSetup()
+        fetchDetails()
+    }
+
+    func initialSetup() {
         registerNib()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
-        fetchData()
     }
-
+    
+    func fetchDetails() {
+        fetchData {[weak self] success in
+            if success {
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
     private func registerNib() {
         let nib = UINib(nibName: TCConstant.kEventNibName, bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: TCConstant.kEventTableViewCellIdentifier)
@@ -49,7 +63,7 @@ class ViewController: UIViewController {
         self.tableView.register(nib4, forCellReuseIdentifier: TCConstant.kPostWithCollageTableViewCellIdentifier)
     }
     
-    func fetchData() {
+    func fetchData(completion: @escaping (Bool) -> ()) {
         
         let url = URL(string: TCConstant.kApiURL)
         guard let requestUrl = url else { fatalError() }
@@ -58,7 +72,7 @@ class ViewController: UIViewController {
         // Specify HTTP Method to use
         request.httpMethod = "GET"
         // Send HTTP Request
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
             
             // Check if Error took place
             if let error = error {
@@ -77,10 +91,13 @@ class ViewController: UIViewController {
                 let decoder = JSONDecoder()
 
                 do {
-                let _ = try decoder.decode(PersonDetails.self, from: data)
-
+                let responseModel = try decoder.decode([PersonDetails].self, from: data)
+                    print(responseModel)
+                    self.personDetails  = responseModel
+                    completion(true)
                 } catch {
                 print(error.localizedDescription)
+                    completion(false)
                 }
                
             }
@@ -118,7 +135,9 @@ extension ViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.navigationDelegate = self
-            cell.setupDataSource(index: indexPath.row)
+            if personDetails.count > 0 {
+                cell.setupDataSource(index: indexPath.row, person: personDetails[0])
+            }
             return cell
         case .postwithCollage:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TCConstant.kPostWithCollageTableViewCellIdentifier, for: indexPath) as? PostWithCollageTableViewCell else {
@@ -131,7 +150,9 @@ extension ViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.navigationDelegate = self
-            cell.setupDataSource(index: indexPath.row)
+            if personDetails.count > 0 {
+                cell.setupDataSource(index: indexPath.row, person: personDetails[1])
+            }
             return cell
         case .postwithButton:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TCConstant.kPostWithButtonTableViewCellIdentifier, for: indexPath) as? PostWithButtonTableViewCell else {

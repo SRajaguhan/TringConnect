@@ -12,6 +12,16 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
+
+//struct Person : Codable {
+//    let items : [PersonDetails]?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case items = ""
+//    }
+//}
+
+
 struct PersonDetails : Codable {
 	let id : Int?
 	let name : String?
@@ -33,17 +43,5 @@ struct PersonDetails : Codable {
 		case likes = "likes"
 		case comments = "comments"
 	}
-
-//	init(from decoder: Decoder) throws {
-//		let values = try decoder.container(keyedBy: CodingKeys.self)
-//		id = try values.decodeIfPresent(Int.self, forKey: .id)
-//		name = try values.decodeIfPresent(String.self, forKey: .name)
-//		role = try values.decodeIfPresent(String.self, forKey: .role)
-//		post = try values.decodeIfPresent(String.self, forKey: .post)
-//		date = try values.decodeIfPresent(String.self, forKey: .date)
-//		time = try values.decodeIfPresent(String.self, forKey: .time)
-//		likes = try values.decodeIfPresent(Int.self, forKey: .likes)
-//		comments = try values.decodeIfPresent(Int.self, forKey: .comments)
-//	}
 
 }

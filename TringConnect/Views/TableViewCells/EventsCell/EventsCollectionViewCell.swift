@@ -15,5 +15,13 @@ class EventsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override var isSelected: Bool {
+       didSet{
+           UIView.animate(withDuration: 0.25) {
+               self.backgroundColor = UIColor(named: self.isSelected ? "Green" : "White")
+           }
+       }
+   }
 
 }

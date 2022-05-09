@@ -14,6 +14,7 @@ protocol TCNaviagtiondelegate: NSObjectProtocol {
 
 class ImagePostTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var headerView: CustomImageHeaderView!
     @IBOutlet weak var postImageView: UIImageView!
     weak var navigationDelegate: TCNaviagtiondelegate?
     override func awakeFromNib() {
@@ -29,9 +30,10 @@ class ImagePostTableViewCell: UITableViewCell {
         postImageView.isUserInteractionEnabled = true
     }
 
-    func setupDataSource(index: Int) {
+    func setupDataSource(index: Int, person: PersonDetails) {
         let imageName = (index == 1) ? "post_img" : "post_one_img"
         postImageView.image = UIImage(named: imageName)
+        headerView.setupDataSource(person)
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
